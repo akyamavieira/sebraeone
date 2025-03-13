@@ -8,10 +8,9 @@
           round
           @click="toggleLeftDrawer"
           aria-label="Menu"
-          :icon="fasBars"
+          icon="fa fa-bars"
           class="q-mr-sm"
         />
-
         <q-toolbar-title v-if="$q.screen.gt.xs" shrink class="row items-center no-wrap">
           <img :src="isDarkMode ? 'src/assets/logo-white.svg' : 'src/assets/logo.svg'" alt="SebraeOne" class="q-mr-sm" />
         </q-toolbar-title>
@@ -20,7 +19,7 @@
 
         <q-input class="GNL__toolbar-input" :bg-color="isDarkMode ? 'dark-page' : 'primary'" :color="isDarkMode ? 'grey-3' : 'accent'" dense rounded :standout="isDarkMode ? 'bg-grey-1' : 'bg-accent'" v-model="search" placeholder="Search for topics, locations & sources">
           <template v-slot:prepend>
-            <q-icon v-if="search === ''" name="search" />
+            <q-icon v-if="search === ''" name="fa fa-magnifying-glass" />
             <q-icon v-else name="clear" class="cursor-pointer" @click="search = ''" />
           </template>
         </q-input>
@@ -28,10 +27,10 @@
         <q-space />
 
         <div class="q-gutter-sm row items-center no-wrap">
-          <q-btn @click="toggleTheme" round flat :color="isDarkMode ? 'yellow' : 'accent'" :icon="isDarkMode ? fasMoon : fasSun">
+          <q-btn @click="toggleTheme" round flat :color="isDarkMode ? 'yellow' : 'accent'" :icon="isDarkMode ? 'fa fa-moon' : 'fa fa-sun'">
             <q-tooltip>{{ isDarkMode ? 'Modo Dark' : 'Modo Light' }}</q-tooltip>
           </q-btn>
-          <q-btn round flat :color="isDarkMode ? 'grey-3' : 'accent'" :icon="fasBell">
+          <q-btn round flat :color="isDarkMode ? 'grey-3' : 'accent'" icon="fa fa-bell">
             <q-badge color="red" text-color="grey-3" floating>
               2
             </q-badge>
@@ -97,7 +96,6 @@
 <script lang="ts">
 import { ref } from 'vue'
 import { useQuasar } from 'quasar'
-import { fasBars, fasMoon, fasSun, fasBell, fasBuilding, fasUserTie, fasHeadset, fasComments, fasGear, fasRightFromBracket } from '@quasar/extras/fontawesome-v6'
 
 export default {
   name: 'SebraeOneLayout',
@@ -122,29 +120,19 @@ export default {
       search,
       toggleTheme,
       isDarkMode,
-      fasBars,
-      fasBell,
-      fasMoon,
-      fasSun,
-      fasBuilding,
-      fasUserTie,
-      fasHeadset,
-      fasComments,
-      fasGear,
-      fasRightFromBracket,
 
       // Grupo de links1
       links1: [
-        { icon: fasBuilding, text: 'Institucional' },
-        { icon: fasUserTie, text: 'Gestão' },
-        { icon: fasHeadset, text: 'Suporte' },
-        { icon: fasComments, text: 'Chat e Vídeo' },
+        { icon: 'fa fa-building', text: 'Institucional' },
+        { icon: 'fa fa-user-tie', text: 'Gestão' },
+        { icon: 'fa fa-headset', text: 'Suporte' },
+        { icon: 'fa fa-comments', text: 'Chat e Vídeo' },
       ],
 
       // Grupo de links2
       links2: [
-        { icon: fasGear, text: 'Ferramentas' },
-        { icon: fasRightFromBracket, text: 'Sair' }
+        { icon: 'fa fa-gear', text: 'Ferramentas' },
+        { icon: 'fa fa-right-from-bracket', text: 'Sair' }
       ],
 
       toggleLeftDrawer
@@ -152,6 +140,7 @@ export default {
   }
 }
 </script>
+
 <style lang="sass">
 .GNL
 
