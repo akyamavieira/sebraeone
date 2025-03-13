@@ -50,7 +50,6 @@
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
-      bordered
       :class="isDarkMode ? 'bg-dark' : 'bg-white'"
       :width="280"
     >
@@ -167,9 +166,6 @@ export default {
     border-radius: 0 24px 24px 0
     margin-right: 12px
 
-    .q-item__section--avatar
-      .q-icon
-
     .q-item__label
       letter-spacing: .01785714em
       font-size: .875rem
@@ -181,7 +177,4 @@ export default {
     text-decoration: none
     font-weight: 500
     font-size: .75rem
-
-    &:hover
-
 </style>
